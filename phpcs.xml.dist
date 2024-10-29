@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	name="AryelAR3DProductViewer"
+	xsi:noNamespaceSchemaLocation="./vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+	<description>AryelAR3DProductViewer rules for PHP_CodeSniffer</description>
+
+	<file>.</file>
+
+	<!-- Exclude dependency related files and generated files from being scanned. -->
+	<exclude-pattern>vendor/*</exclude-pattern>
+
+	<!-- Only check PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Show progress, show the error codes for each message (source). -->
+	<arg value="sp"/>
+
+	<!-- Strip the filepaths down to the relevant bit. -->
+	<arg name="basepath" value="."/>
+
+	<!-- Check up to 12 files simultaneously. -->
+	<arg name="parallel" value="12"/>
+
+	<!-- Cache the results between runs. -->
+	<arg name="cache" value="phpcs.cache"/>
+
+	<rule ref="WordPress">
+		<!-- PSR4 -->
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+	</rule>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="aryel"/>
+				<element value="default"/>
+			</property>
+		</properties>
+	</rule>
+
+</ruleset>

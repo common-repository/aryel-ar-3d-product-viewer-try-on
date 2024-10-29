@@ -1,0 +1,243 @@
+#aryel-ar-3d-product-viewer {
+    .postbox-header {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            flex-shrink: 0;
+        }
+
+        .metabox-header {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .form-field {
+            display: flex;
+            align-items: center;
+
+            label {
+                font-weight: bold;
+                flex-shrink: 0;
+                margin-left: .5em;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .inside {
+        margin: 0;
+        padding: 0
+    }
+
+    .aryel-metabox {
+        overflow: hidden;
+    }
+
+    ul.wca-tabs {
+        margin: 0;
+        width: 20%;
+        float: left;
+        line-height: 1em;
+        padding: 0 0 10px;
+        position: relative;
+        background-color: #fafafa;
+        border-right: 1px solid #eee;
+        box-sizing: border-box;
+
+        @media only screen and (max-width: 900px){
+            width: 52px;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            display: block;
+            position: relative;
+
+            a {
+                display: flex;
+                width: auto;
+                align-items: center;
+                justify-items: start;
+                gap: 5px;
+                margin: 0;
+                padding: 10px;
+                box-shadow: none;
+                text-decoration: none;
+                line-height: 20px!important;
+                border-bottom: 1px solid #eee;
+
+                @media only screen and (max-width: 900px) {
+                    justify-content: center;
+                }
+
+                & > img {
+                    max-width: 15px;
+                    height: auto;
+                    object-fit: contain;
+                }
+
+                & > img.inactive {
+                    display: block;
+                }
+
+                & > img.active {
+                    display: none;
+                }
+
+                & > span {
+                    display: inline-block;
+
+                    @media only screen and (max-width: 900px) {
+                        display: none;
+                    }
+                }
+            }
+
+            &.active a {
+                color: #555;
+                position: relative;
+                background-color: #eee;
+
+                & > img.active {
+                    display: block;
+                }
+
+                & > img.inactive {
+                    display: none;
+                }
+            }
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 9999em;
+            position: absolute;
+            bottom: -9999em;
+            left: 0;
+            background-color: #fafafa;
+            border-right: 1px solid #eee;
+        }
+    }
+
+    .panel {
+        float: left;
+        width: 80%;
+
+        &_description {
+            padding: 0 12px;
+        }
+
+        .options_group {
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #eee;
+
+            &_title {
+                padding: 0 12px;
+                font-size: 14px;
+            }
+
+            .preview-field {
+                padding: 0 12px;
+                float: none;
+
+                iframe {
+                    width: 100%;
+                    height: 420px;
+                }
+            }
+        }
+
+        p.form-field,
+        div.form-field {
+            display: flex;
+            padding: 5px 20px 5px 162px !important;
+
+            label {
+                float: left;
+                width: 150px;
+                padding: 0;
+                margin: 0 0 0 -150px;
+                line-height: 24px;
+            }
+
+            .select {
+                width: 100%;
+            }
+
+            .three-values {
+                display: flex;
+                width: 95%;
+                border: 1px solid transparent;
+            }
+
+            .wp-picker-container label {
+                margin: 0;   
+            }
+
+            &.media {
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                }
+
+                button {
+                    margin-right: 5px;
+                }
+
+                .woocommerce-help-tip {
+                    margin-left: 0px;
+                    position: relative;
+
+                    span {
+                        display: none;
+                        position: absolute;
+                        background: #333333;
+                        color: white;
+                        font-size: 10px;
+                        border-radius: 3px;
+                        top: 30px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: 5px 15px;
+                        min-width: 114px;
+                        box-shadow: 0px 3px 6px rgba(0,0,0,0.12);
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            border-left: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            border-bottom: 5px solid #333333;
+                            position: absolute;
+                            top: -5px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+
+                    &:hover span {
+                        display: block;
+                    }
+                }
+
+                a {
+                    margin-left: 10px;
+                    color: #b32d2e;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .error {
+        padding: 8px 10px;
+    }
+}

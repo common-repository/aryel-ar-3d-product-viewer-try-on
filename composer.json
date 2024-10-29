@@ -1,0 +1,30 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Aryel\\AryelAR3DProductViewer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aryel S.r.l.",
+            "email": "hello@aryel.io"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^5.4",
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "cs": [
+            "vendor/bin/phpcs -d memory_limit=-1"
+        ],
+        "csfix": [
+            "vendor/bin/phpcbf -d memory_limit=-1 -v"
+        ]
+    }
+}
